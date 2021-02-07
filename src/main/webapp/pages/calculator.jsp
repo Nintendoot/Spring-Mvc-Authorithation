@@ -8,14 +8,14 @@
 <body>
 <div class="container">
     <label class="form-label">Calculator</label>
-    <form action="/calc" method="post">
+    <form action="/calculat" method="post">
         <div class="mb-3">
-            <input type="text" class="form-control" name="FirstNumber" placeholder="First Number"
+            <input type="text" class="form-control" name="numOne" placeholder="First Number"
                    style="width:260px; height:50px;">
         </div><br>
 
         <div class="mb-3">
-            <input type="text" class="form-control" name="SecondNumber" placeholder="Second Number"
+            <input type="text" class="form-control" name="numTwo" placeholder="Second Number"
                    style="width:260px; height:50px;">
         </div><br>
 
@@ -26,7 +26,7 @@
             <input type="submit" class="btn btn-primary" name="simbol" value="/" style="width:66px; height:50px;"></input>
         </div><br><br>
         <div class="mb-3">
-            <input type="text" class="form-control" placeholder="${requestScope.result}" style="width:260px; height:50px;">
+            <input type="text" class="form-control" placeholder="${calculator}" style="width:260px; height:50px;">
         </div><br>
         </span>
     </form>
