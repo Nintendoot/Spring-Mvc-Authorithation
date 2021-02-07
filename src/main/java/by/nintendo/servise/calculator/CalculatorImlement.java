@@ -35,6 +35,7 @@ public class CalculatorImlement implements CalculatorServise {
 
         calculator.setResult(resoult);
 
+
     }
 }
 
