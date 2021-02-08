@@ -9,9 +9,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(path = "/")
 public class HomeController {
 
-	@GetMapping(path = "/index")
+	@GetMapping(path = "/home")
 	public ModelAndView index(ModelAndView modelAndView){
-		modelAndView.setViewName("history");
+		modelAndView.setViewName("index");
 		return modelAndView;
 	}
 }

@@ -2,13 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <body>
-<h2>Hello World!</h2>
+<jsp:include page="_head.jsp"/>
 <div class="container">
     <form action="/history" method="get">
         <h2>История</h2>
         <c:forEach var="cl" items="${history}">
 
-            <td>${cl}</td><br>
+            <td>${cl}</td>
+            <br>
         </c:forEach>
     </form>
 </div>

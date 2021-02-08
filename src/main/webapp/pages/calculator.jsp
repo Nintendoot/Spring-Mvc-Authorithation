@@ -7,6 +7,7 @@
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
+<jsp:include page="_head.jsp"/>
 <div class="container">
     <label class="form-label">Calculator</label>
     <form action="/calculat" method="post">
@@ -31,7 +32,6 @@
         </div><br>
         </span>
     </form>
-    <a href="/history">История</a>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
