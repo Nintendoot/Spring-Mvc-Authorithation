@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-    <form class="row g-3" style="margin-top: 100px">
+    <form action="/auth" method="post" class="row g-3" style="margin-top: 100px">
         <h2>Authorithation</h2>
         <div class="col-md-6">
             <label class="form-label">Name</label>

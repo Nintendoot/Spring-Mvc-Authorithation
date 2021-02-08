@@ -5,9 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CalculatorImlement implements CalculatorServise {
+public class CalculatorImplement implements CalculatorServise {
     @Autowired
-    public CalculatorImlement() {
+    public CalculatorImplement() {
     }
 
     @Override

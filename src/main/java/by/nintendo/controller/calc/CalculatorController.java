@@ -16,10 +16,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class CalculatorController {
 
     @Autowired
+    @Qualifier("calculatorImplement")
     CalculatorServise calculatorServise;
 
     @Autowired
-    @Qualifier(value = "inMemory")
+    @Qualifier("historyInMemory")
     HistoryStorage historyStorage;
 
     @GetMapping(path = "/calculator")
