@@ -12,7 +12,12 @@ public class User {
     public User() {
     }
 
-    public User(String name,String surname, String login, String password) {
+    public User(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+
+    public User(String name, String surname, String login, String password) {
         this.name = name;
         this.surname=surname;
         this.login = login;
@@ -81,11 +86,11 @@ public class User {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        return Objects.equals(login, user.login) && Objects.equals(password, user.password);
+        return Objects.equals(login, user.login);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(login, password);
+        return Objects.hash(login);
     }
 }
