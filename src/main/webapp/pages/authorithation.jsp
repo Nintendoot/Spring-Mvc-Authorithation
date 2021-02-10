@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <title>Authorithation</title>
@@ -11,7 +12,7 @@
         <h2>Authorithation</h2>
         <div class="col-md-6">
             <label class="form-label">Name</label>
-            <input type="text" class="form-control" name="name">
+            <input type="text" class="form-control" name="name" >
         </div>
         <div class="col-md-6">
             <label class="form-label">Surname</label>

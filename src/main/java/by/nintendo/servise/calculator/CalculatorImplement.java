@@ -1,6 +1,6 @@
 package by.nintendo.servise.calculator;
 
-import by.nintendo.model.Calculator;
+import by.nintendo.entity.Calculator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

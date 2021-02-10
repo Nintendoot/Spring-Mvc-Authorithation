@@ -1,6 +1,6 @@
 package by.nintendo.storage.calc;
 
-import by.nintendo.model.Calculator;
+import by.nintendo.entity.Calculator;
 
 import java.util.List;
 

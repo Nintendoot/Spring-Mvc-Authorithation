@@ -18,7 +18,12 @@ public class HomeController {
 	public ModelAndView index(HttpSession session,ModelAndView modelAndView){
 
 	      modelAndView.setViewName("index");
-	      modelAndView.addObject(session);
+	      if(session.getAttribute("session")==null){
+	      	return modelAndView;
+		  }else{
+			  modelAndView.addObject(session.getAttribute("session"));
+		  }
+
 		return modelAndView;
 	}
 }

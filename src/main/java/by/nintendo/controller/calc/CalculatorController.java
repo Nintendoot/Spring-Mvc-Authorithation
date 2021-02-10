@@ -1,6 +1,6 @@
 package by.nintendo.controller.calc;
 
-import by.nintendo.model.Calculator;
+import by.nintendo.entity.Calculator;
 import by.nintendo.servise.calculator.CalculatorServise;
 import by.nintendo.storage.calc.HistoryStorage;
 import org.springframework.beans.factory.annotation.Autowired;

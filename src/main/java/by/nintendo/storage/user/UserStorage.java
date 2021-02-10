@@ -1,6 +1,6 @@
 package by.nintendo.storage.user;
 
-import by.nintendo.model.User;
+import by.nintendo.entity.User;
 
 import java.util.List;
 
