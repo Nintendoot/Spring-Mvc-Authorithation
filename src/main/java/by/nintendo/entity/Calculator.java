@@ -1,4 +1,4 @@
-package by.nintendo.model;
+package by.nintendo.entity;
 
 public class Calculator {
     private double numOne;

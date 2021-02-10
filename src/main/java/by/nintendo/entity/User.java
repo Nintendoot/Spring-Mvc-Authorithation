@@ -1,11 +1,27 @@
-package by.nintendo.model;
+package by.nintendo.entity;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 public class User {
+    @NotNull(message = "Not empty")
+    @NotBlank(message = "not probel")
     private String name;
+
+    @NotNull(message = "Not empty")
+    @NotBlank(message = "not probel")
     private String surname;
+
+    @NotNull(message = "Not empty")
+    @NotBlank(message = "not probel")
+    @Size(min = 4,max = 10,message = "size min = 4,max = 10")
     private String login;
+
+    @NotNull(message = "Not empty")
+    @NotBlank(message = "not probel")
+    @Size(min = 4,max = 10,message = "size min = 4,max = 10")
     private String password;
     private int id;
 

@@ -17,11 +17,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/author">Authorithation</a>
-                <a class="nav-link active" aria-current="page" href="/registrat">Registration</a>
+                <c:if test="${sessionScope.userSession==null}">
+                      <a class="nav-link active" aria-current="page" href="/author">Authorithation</a>
+                      <a class="nav-link active" aria-current="page" href="/registrat">Registration</a>
+                </c:if>
+                <c:if test="${sessionScope.userSession!=null}">
                 <a class="nav-link" href="/calculator">Calculator</a>
                 <a class="nav-link" href="/history">History</a>
                 <a class="nav-link" href="/logout">Logout</a>
+                </c:if>
             </div>
         </div>
     </div>
