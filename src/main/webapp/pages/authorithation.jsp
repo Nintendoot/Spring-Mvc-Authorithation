@@ -13,18 +13,22 @@
         <div class="col-md-6">
             <label class="form-label">Name</label>
             <input type="text" class="form-control" name="name" >
+            <td>${errors.get("name")}</td>
         </div>
         <div class="col-md-6">
             <label class="form-label">Surname</label>
             <input type="text" class="form-control" name="surname">
+            <td>${errors.get("surname")}</td>
         </div>
         <div class="col-md-6">
             <label class="form-label">Login</label>
             <input type="text" class="form-control" name="login">
+            <td>${errors.get("login")}</td>
         </div>
         <div class="col-md-6">
             <label class="form-label">Password</label>
             <input type="text" class="form-control" name="password">
+            <td>${errors.get("password")}</td>
         </div>
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Sign in</button>

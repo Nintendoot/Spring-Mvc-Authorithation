@@ -7,16 +7,17 @@
 </head>
 <body>
 <div class="container">
-    <form action="/regist" method="post">
+    <form action="/regist" method="post" style="margin-top: 100px">
         <div class="mb-3" style="margin-top: 100px">
-            <h2>Authorithation</h2>
+            <h2>Registration</h2>
             <label  class="form-label">Login</label>
             <input type="text" class="form-control" name="login">
-            <div  class="form-text">Enter your username.</div>
+            <td>${err.get("login")}</td>
         </div>
         <div class="mb-3">
             <label  class="form-label">Password</label>
             <input type="password" class="form-control" name="password">
+            <td>${err.get("password")}</td>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

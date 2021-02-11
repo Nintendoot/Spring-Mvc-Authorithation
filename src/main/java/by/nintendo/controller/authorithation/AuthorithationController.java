@@ -6,11 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -39,15 +38,16 @@ public class AuthorithationController {
 
     @PostMapping(path = "/auth")
     public ModelAndView authorithation(@Valid User user, BindingResult result, ModelAndView modelAndView) {
-        Map<String,String> errorMap=new HashMap<>();
-        if(result.hasErrors()){
-            for (ObjectError error:result.getAllErrors()){
-                errorMap.put(error.getObjectName(),error.getDefaultMessage());
+
+        if (result.hasErrors()) {
+            Map<String, String> errorMap = new HashMap<>();
+            for(FieldError fieldError:result.getFieldErrors()){
+           errorMap.put(fieldError.getField(),fieldError.getDefaultMessage());
             }
-            modelAndView.addObject("errors",errorMap);
+            modelAndView.addObject("errors", errorMap);
             modelAndView.setViewName("authorithation");
             System.out.println(errorMap);
-        }else {
+        } else {
             if (userStorage.userInMemori(user)) {
                 System.out.println("uze est");
                 modelAndView.setViewName("history");
@@ -73,15 +73,30 @@ public class AuthorithationController {
     }
 
     @PostMapping(path = "/regist")
-    public ModelAndView registration(User user, HttpSession httpSession, ModelAndView modelAndView) {
-
-        if (userStorage.checkLoginAndPassword(user)) {
-            modelAndView.setViewName("index");
-            modelAndView.addObject("userSession",userStorage.getByLogin(user.getLogin()));
-
+    public ModelAndView registration(@Valid @ModelAttribute("user") User user, BindingResult result, ModelAndView modelAndView) {
+        if (result.hasErrors()) {
+            Map<String, String> error = new HashMap<>();
+            for (FieldError errordsd : result.getFieldErrors()) {
+                error.put(errordsd.getField(), errordsd.getDefaultMessage());
+            }
+            modelAndView.addObject("err", error);
+            modelAndView.setViewName("registration");
+            System.out.println(error);
         } else {
-            modelAndView.setViewName("calculator");
+            if (userStorage.checkLoginAndPassword(user)) {
+                modelAndView.setViewName("index");
+                modelAndView.addObject("userSession", userStorage.getByLogin(user.getLogin()));
+
+            } else {
+                modelAndView.setViewName("index");
+            }
         }
+
         return modelAndView;
     }
+
+//    @InitBinder("Auth")
+//    private void initUserBinder(WebDataBinder authBinder ) {
+//        authBinder.setValidator(new User());
+//    }
 }
