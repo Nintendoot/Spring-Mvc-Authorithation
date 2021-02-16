@@ -40,7 +40,7 @@ public class AuthorithationController {
     }
 
     @PostMapping(path = "/regist")
-    public ModelAndView regist(@Valid User user, BindingResult result, ModelAndView modelAndView) throws NoSuchUserExeption {
+    public ModelAndView regist(@Valid User user, BindingResult result, ModelAndView modelAndView)  {
 
         if (result.hasErrors()) {
             Map<String, String> errorMap = new HashMap<>();
@@ -72,7 +72,7 @@ public class AuthorithationController {
     }
 
     @PostMapping(path = "/authoriz")
-    public ModelAndView authorith(@Valid @ModelAttribute("user") UserModel user, BindingResult result, ModelAndView modelAndView) throws NoSuchUserExeption {
+    public ModelAndView authorith(@Valid @ModelAttribute("user") UserModel user, BindingResult result, ModelAndView modelAndView)  {
         if (result.hasErrors()) {
             Map<String, String> errors = new HashMap<>();
             for (FieldError fieldError : result.getFieldErrors()) {

@@ -1,6 +1,7 @@
 package by.nintendo.entity;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public class Calculator {
     private double numOne;
     @NotNull(message = "pppppppppp")
     private double numTwo;
-    @NotNull(message = "pppppppppp")
+
     private String simbol;
 
     private double result;
