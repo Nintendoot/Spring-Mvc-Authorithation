@@ -1,9 +1,17 @@
 package by.nintendo.entity;
 
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Calculator {
+    @NotNull(message = "pppppppppp")
     private double numOne;
+    @NotNull(message = "pppppppppp")
     private double numTwo;
+    @NotNull(message = "pppppppppp")
     private String simbol;
+
     private double result;
 
     public Calculator() {
@@ -20,6 +28,10 @@ public class Calculator {
         this.numTwo = numTwo;
         this.simbol = simbol;
         this.result = result;
+    }
+
+    public Calculator(@NotNull(message = "pppppppppp") double numOne) {
+        this.numOne = numOne;
     }
 
     public double getNumOne() {

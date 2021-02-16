@@ -1,40 +1,37 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Authorithation</title>
+    <title>Authorization</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
-    <form action="/auth" method="post" class="row g-3" style="margin-top: 100px">
-        <h2>Authorithation</h2>
-        <div class="col-md-6">
-            <label class="form-label">Name</label>
-            <input type="text" class="form-control" name="name" >
-            <td>${errors.get("name")}</td>
-        </div>
-        <div class="col-md-6">
-            <label class="form-label">Surname</label>
-            <input type="text" class="form-control" name="surname">
-            <td>${errors.get("surname")}</td>
-        </div>
-        <div class="col-md-6">
+    <form action="/authoriz" method="post" style="margin-top: 100px">
+        <div class="mb-3" style="margin-top: 100px">
+            <h2>Authorization</h2>
             <label class="form-label">Login</label>
             <input type="text" class="form-control" name="login">
-            <td>${errors.get("login")}</td>
+            <c:if test="${err.containsKey(\"login\")}">
+                <div class="alert alert-primary" role="alert">
+                        ${err.get("login")}
+                </div>
+            </c:if>
         </div>
-        <div class="col-md-6">
+        <div class="mb-3">
             <label class="form-label">Password</label>
             <input type="text" class="form-control" name="password">
-            <td>${errors.get("password")}</td>
+            <c:if test="${err.containsKey(\"password\")}">
+                <div class="alert alert-primary" role="alert">
+                        ${err.get("password")}
+                </div>
+            </c:if>
         </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>

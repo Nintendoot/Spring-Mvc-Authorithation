@@ -9,7 +9,10 @@ import java.util.List;
 
 @Component
 public class UserInMemory implements UserStorage {
-    private List<User> userList = new ArrayList<>();
+    private final List<User> userList = new ArrayList<>();
+     {
+      userList.add(new User("admin","admin"));
+    }
 
     @Autowired
     public UserInMemory() {

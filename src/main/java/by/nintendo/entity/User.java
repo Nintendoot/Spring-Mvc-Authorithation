@@ -3,27 +3,32 @@ package by.nintendo.entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class User {
-    @NotNull(message = "Not empty")
-    @NotBlank(message = "not probel")
+
+  @NotBlank(message = "The field \"name\" must not be empty")
     private String name;
 
-    @NotNull(message = "Not empty")
-    @NotBlank(message = "not probel")
+
+   @NotBlank(message = "The field \"surname\" must not be empty")
     private String surname;
 
-    @NotNull(message = "Not empty")
-    @NotBlank(message = "not probel")
+
+    @NotBlank(message = "The field \"login\" must not be empty")
     @Size(min = 4,max = 10,message = "size min = 4,max = 10")
     private String login;
 
-    @NotNull(message = "Not empty")
-    @NotBlank(message = "not probel")
+
+    @NotBlank(message = "The field \"password\" must not be empty")
     @Size(min = 4,max = 10,message = "size min = 4,max = 10")
     private String password;
+
     private int id;
+
+    private  List<Calculator> list=new ArrayList<>();
 
     public User() {
     }
@@ -85,6 +90,18 @@ public class User {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public List<Calculator> getList() {
+        return list;
+    }
+
+    public void addList(Calculator calculator){
+        list.add(calculator);
+    }
+
+    public void setList(List<Calculator> list) {
+        this.list = list;
     }
 
     @Override

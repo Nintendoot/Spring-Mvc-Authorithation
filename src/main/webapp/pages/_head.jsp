@@ -18,14 +18,17 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <c:if test="${sessionScope.userSession==null}">
-                      <a class="nav-link active" aria-current="page" href="/author">Authorithation</a>
-                      <a class="nav-link active" aria-current="page" href="/registrat">Registration</a>
+                      <a class="nav-link active" aria-current="page" href="/auth">Authorithation</a>
+                      <a class="nav-link active" aria-current="page" href="/reg">Registration</a>
+                      <a class="nav-link active" aria-current="page"  href="/histor">UsersHistory</a>
                 </c:if>
                 <c:if test="${sessionScope.userSession!=null}">
                 <a class="nav-link" href="/calculator">Calculator</a>
                 <a class="nav-link" href="/history">History</a>
                 <a class="nav-link" href="/logout">Logout</a>
+
                 </c:if>
+
             </div>
         </div>
     </div>

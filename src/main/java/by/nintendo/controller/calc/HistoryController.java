@@ -1,24 +1,22 @@
 package by.nintendo.controller.calc;
 
-import by.nintendo.storage.calc.HistoryStorage;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import by.nintendo.entity.Calculator;
+import by.nintendo.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping(path = "/")
 public class HistoryController {
 
-    @Autowired
-    @Qualifier(value = "inMemory")
-    HistoryStorage historyStorage;
 
     @GetMapping(path = "/history")
-    public ModelAndView history(ModelAndView modelAndView){
-        modelAndView.addObject("history",historyStorage.getList());
+    public ModelAndView history(ModelAndView modelAndView, User user, HttpSession session){
+        modelAndView.addObject("history",((User) session.getAttribute("userSession")).getList());
         modelAndView.setViewName("history");
         return modelAndView;
     }
